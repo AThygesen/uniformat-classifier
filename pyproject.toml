@@ -1,0 +1,28 @@
+[project]
+name = "uniformat-classifier"
+version = "0.1.0"
+description = "Active-learning classifier for Uniformat categorization of Danish construction tenderlists"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "sentence-transformers>=3.0",
+    "torch>=2.2",
+    "scikit-learn>=1.4",
+    "rich>=13.7",
+    "questionary>=2.0",
+    "typer>=0.12",
+    "streamlit>=1.28",
+    "streamlit-option-menu>=0.3",
+]
+
+[project.scripts]
+uniformat = "uniformat_classifier.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uniformat_classifier"]
