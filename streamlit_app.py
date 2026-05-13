@@ -37,7 +37,7 @@ from uniformat_classifier.taxonomy import Taxonomy
 # Config
 # =========================================================================
 
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent
 TEMPLATE = PROJECT_ROOT / "Indskrivning_template.xlsx"
 DATA = Path(__file__).parent / "data"
 
