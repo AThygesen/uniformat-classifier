@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict, dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .ingest import LabeledExample
@@ -36,7 +36,7 @@ class TrainingRecord:
             text=ex.text,
             code=ex.code,
             source="ingest",
-            ts=datetime.utcnow().isoformat(timespec="seconds"),
+            ts=datetime.now(timezone.utc).isoformat(timespec="seconds"),
             file=ex.source_file,
             row=ex.source_row,
         )
@@ -47,7 +47,7 @@ class TrainingRecord:
             text=text,
             code=code,
             source="user",
-            ts=datetime.utcnow().isoformat(timespec="seconds"),
+            ts=datetime.now(timezone.utc).isoformat(timespec="seconds"),
         )
 
 

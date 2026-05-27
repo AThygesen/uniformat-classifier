@@ -37,10 +37,10 @@ from uniformat_classifier.excel_io import (  # noqa: E402
 from uniformat_classifier.persist import TrainingStore  # noqa: E402
 from uniformat_classifier.taxonomy import Taxonomy  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "Indskrivning_template.xlsx"
-HISTORY = ROOT / "Cost_Database_Projekter"
-DATA = Path(__file__).parent / "data"
+HISTORY = ROOT.parent / "Cost_Database_Projekter"
+DATA = ROOT / "data"
 
 
 def main() -> None:
